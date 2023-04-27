@@ -13,6 +13,7 @@ body {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 li {
@@ -57,14 +58,12 @@ li {
 }
 
 .flex-nav {
-
     grid-row: 1 2;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-
 
 .main2 {
     grid-row: 2 3;
@@ -247,13 +246,17 @@ li {
 }
 
 /* #############################    RECETAS   #############################*/
-.grilla-receta{
+.grilla-receta {
     background-color: rgb(246, 202, 209);
 }
-.titulo-receta{
+
+
+
+.titulo-receta {
     color: black;
 }
-.main-recetas{
+
+.main-recetas {
     display: grid;
     padding: 20px;
     grid-template-rows: 1fr 1fr;
@@ -261,35 +264,37 @@ li {
     grid-template-areas: "rece-salu"
         "receta-img"
 }
-.rece-salu{
+
+.rece-salu {
     display: grid;
     grid-area: arrece-salu;
-    color: ;
-    background-color: ;
     align-content: center;
     text-align: center;
+}
+
+.croqueta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 
 }
-.croqueta{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
 
-}
-.garbanzo{
+.garbanzo {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
-.masa{
+
+.masa {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
-.contacto-rece{
+
+.contacto-rece {
     color: black;
     grid-row: 2 3;
     display: grid;
@@ -298,7 +303,7 @@ li {
     padding: 10px;
 }
 
-.pagos-rece{
+.pagos-rece {
     color: black;
     grid-row: 2 3;
     display: grid;
@@ -306,8 +311,9 @@ li {
     text-align: center;
     padding: 10px;
 }
-.mapa-rece{
-    color:black;
+
+.mapa-rece {
+    color: black;
     grid-row: 3 4;
     display: grid;
     justify-content: center;
@@ -315,6 +321,132 @@ li {
     padding: 10px;
 
 }
+
+/* ######################    PRODUCTOS    ######################################## */
+ 
+.grilla-producto {
+    background-color: rgb(39, 37, 37);
+}
+.flex-navproduc{
+
+    grid-row: 1 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.main-produc {
+    display: grid;
+    padding: 20px;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    grid-template-areas: "lis-pro"
+        "listado"
+}
+
+.lis-pro {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 30px;
+}
+
+.legumbres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.congelados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.cereales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.dulces {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.varios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+} 
+
+/* ############### ######################   desayunos    ######################## */
+.grilla-desayuno {
+    background-color: rgb(196, 170, 220);
+}
+
+.titulo-dsayuno {
+    color: rgb(255, 109, 80);
+    align-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+
+p {
+    color: white;
+    align-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.boxte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.caja-desa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.caja-tarje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+
+
+
 
 
 
@@ -358,15 +490,11 @@ li {
     }
 
     .main {
-
-
         display: grid;
         grid-area: main;
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr;
         grid-template-areas: "flex-nav main2";
-
-
     }
 
     .flex-nav {
@@ -449,8 +577,6 @@ li {
         display: grid;
         align-content: center;
         text-align: center;
-
-
     }
 
     .recetas {
@@ -493,10 +619,7 @@ li {
         grid-template-areas: "mapa contacto pagos";
     }
 
-
-
-
-    /* #### noteboock artesanales##### */
+    /* ######################### noteboock artesanales   ######################## */
 
     .grillaart {
         background-color: rgb(82, 154, 255)
@@ -519,4 +642,72 @@ li {
         grid-template-columns: repeat(3 1fr);
         grid-template-areas: "mapa contacto pagos";
     }
+    
+/* #############  PRODUCTOS NOTEBOOK ########### */
+.grilla-producto {
+    background-color: rgb(39, 37, 37);
 }
+
+.main-produc {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: 10% 30% 30% 30%;
+    grid-template-areas:
+        " lis-pro"
+        "flex-navprodu varios congelados"
+        "flex-navprodu cereales dulces"
+        "flex-navprodu legumbres"
+    ;
+}
+
+.flex-navproduc {
+    display: grid;
+    grid-area: flex-navprodu;
+}
+
+
+.lis-pro {
+    display: grid;
+    grid-area: lis-pro;
+    align-content: center;
+    text-align: center;
+}
+
+.varios {
+    display: grid;
+    grid-area: varios;
+    justify-content: center;
+        align-content: center;
+}
+
+.congelados {
+    display: grid;
+    grid-area: varios;
+    justify-content: center;
+        align-content: center;
+}
+
+.cereales {
+    display: grid;
+    grid-area: dulces;
+    justify-content: center;
+        align-content: center;
+}
+
+.legumbres {
+    display: grid;
+    grid-area: legumbres;
+    justify-content: center;
+        align-content: center;
+}
+
+
+/* #######################   NOTEBOOK DESAYUNO  ###################### */
+
+
+}
+
+
+
+
