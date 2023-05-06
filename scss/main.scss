@@ -1,81 +1,86 @@
+ @import "color";
+
+
+
  .header {
-    &__logo {
-        justify-content: center;
-        align-items: center;
-    }
+     &__logo {
+         justify-content: center;
+         align-items: center;
+     }
 
-    &__titulo {
-        color: white;
-        align-content: center;
-        text-align: center;
-        padding: 20px;
-    }
-}
+     &__titulo {
+         @include letra-titulo-color(black); //import de letras
+     }
+ }
 
 
 
-.main {
-    display: grid;
-    grid-area: main;
-    grid-template-rows: 10vh 1fr;
+ .main {
+     display: grid;
+     grid-area: main;
+     grid-template-rows: 10vh 1fr;
 
-    
-}
 
-.main2{ grid-row: 2 3;
-    display: grid;
+ }
 
-    grid-template-rows: repeat(6, 1fr);
-    gap: 10px;
-    grid-template-areas:
-        "main2-bienestar"
-        "main2-productos"
-        "main2-recetas"
-        "main2-mermeladas"
-        "main2-muecas"
-        "main2-secos";
+ .pilares-basico {
+     display: grid;
+     color: $mi-color-letra;
+     align-content: center;
+     text-align: center;
 
-        &__bienestar {
+ }
+ .pilares-img-basico{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+ }
 
-            background-color: rgb(166, 73, 253);
-            display: grid;
-            grid-area: bienestar;
-            color: white;
-            align-content: center;
-            text-align: center;
-        }
-        &__productos {
-            background-color: rgb(129, 194, 226);
-            display: grid;
-            grid-area: productos;
-            color: white;
-            align-content: center;
-            text-align: center;
-        }
-        &__recetas {
-            background-color: rgb(249, 170, 61);
-            display: grid;
-            grid-area: recetas;
-            color: white;
-            align-content: center;
-            text-align: center;
-        }
-       &__mermeladas {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        &__muecas {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px; 
-        }
-        &__secos {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
+ .main2 {
+     grid-row: 2 3;
+     display: grid;
+
+     grid-template-rows: repeat(6, 1fr);
+     gap: 10px;
+     grid-template-areas:
+         "main2-bienestar"
+         "main2-productos"
+         "main2-recetas"
+         "main2-mermeladas"
+         "main2-muecas"
+         "main2-secos";
+
+     &__bienestar {
+         @extend .pilares-basico;
+         background-color: rgb(166, 73, 253);
+         grid-area: bienestar;
+
+     }
+
+     &__productos {
+         background-color: rgb(129, 194, 226);
+         grid-area: productos;
+         @extend .pilares-basico;
+         
+     }
+
+     &__recetas {
+         background-color: rgb(249, 170, 61);
+         grid-area: recetas;
+         @extend .pilares-basico;
+      
+     }
+
+     &__mermeladas {
+        @extend .pilares-img-basico;
+     }
+
+     &__muecas {
+        @extend .pilares-img-basico;
+     }
+
+     &__secos {
+        @extend .pilares-img-basico;
+     }
  }
