@@ -1,7 +1,9 @@
  @import "color";
 
 
-
+ .grilla {
+    background-color: rgb(255, 109, 80);
+}
  .header {
      &__logo {
          justify-content: center;
@@ -9,7 +11,7 @@
      }
 
      &__titulo {
-         @include letra-titulo-color(black); //import de letras
+         @include letra-titulo-color(white); //import de letras
      }
  }
 
@@ -83,4 +85,13 @@
      &__secos {
         @extend .pilares-img-basico;
      }
+
+     .pago{
+        @include piededepagina 
+     }
+
+     .contacto{
+        @include piededepagina
+     }
  }
+ 
