@@ -1,97 +1,193 @@
- @import "color";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+    list-style-position: none;
+}
+
+a {
+    text-decoration: none;
+}
 
 
- .grilla {
+@import "color";
+@import "piedepagina";
+@import "letras";
+@import "pilares-basicos";
+
+.grilla {
     background-color: rgb(255, 109, 80);
 }
- .header {
-     &__logo {
-         justify-content: center;
-         align-items: center;
-     }
 
-     &__titulo {
-         @include letra-titulo-color(white); //import de letras
-     }
- }
+.header {
+    display: block none;
+
+    &-logo {
+        display: grid;
+
+    }
+
+    &-titulo {
+        display: grid;
+        @include letra-titulo-color(white);
+    }
+}
+
+.main {
+    display: grid;
+    grid-area: main;
+    grid-template-rows: 10vh 100rem;
+}
 
 
 
- .main {
-     display: grid;
-     grid-area: main;
-     grid-template-rows: 10vh 1fr;
-
-
- }
-
- .pilares-basico {
-     display: grid;
-     color: $mi-color-letra;
-     align-content: center;
-     text-align: center;
-
- }
- .pilares-img-basico{
+.menu {
+    grid-row: 1 2;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
- }
+    flex-direction: row;
+    //justify-content: space-around;
+    //align-items: center;
+    // list-style-type: none;
+}
 
- .main2 {
-     grid-row: 2 3;
-     display: grid;
+.pilares {
+    grid-row: 2 3;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    grid-template-areas:
+        "bienestar"
+        "productos"
+        "recetas"
+        "galeria";
 
-     grid-template-rows: repeat(6, 1fr);
-     gap: 10px;
-     grid-template-areas:
-         "main2-bienestar"
-         "main2-productos"
-         "main2-recetas"
-         "main2-mermeladas"
-         "main2-muecas"
-         "main2-secos";
+    &-bienestar {
+        @include pilares-basico;
+        background-color: rgb(166, 73, 253);
+        grid-area: bienestar;
+    }
 
-     &__bienestar {
-         @extend .pilares-basico;
-         background-color: rgb(166, 73, 253);
-         grid-area: bienestar;
+    &-productos {
+        background-color: rgb(129, 194, 226);
+        grid-area: productos;
+        @include pilares-basico;
+    }
 
-     }
+    &-recetas {
+        background-color: rgb(249, 170, 61);
+        grid-area: recetas;
+        @include pilares-basico;
+    }
 
-     &__productos {
-         background-color: rgb(129, 194, 226);
-         grid-area: productos;
-         @extend .pilares-basico;
-         
-     }
+    &-galeria {
+        @include pilares-img-basico
+    }
+}
 
-     &__recetas {
-         background-color: rgb(249, 170, 61);
-         grid-area: recetas;
-         @extend .pilares-basico;
-      
-     }
+.footer {
+    padding: 40px;
+    @include piedepagina;
 
-     &__mermeladas {
-        @extend .pilares-img-basico;
-     }
+    &-contacto {
+        padding: 25px;
+    }
 
-     &__muecas {
-        @extend .pilares-img-basico;
-     }
+    &-pago {
+        padding: 25px;
+    }
 
-     &__secos {
-        @extend .pilares-img-basico;
-     }
+    &-mapa {
+        padding: 25px;
+    }
+}
 
-     .pago{
-        @include piededepagina 
-     }
+@media (min-width:630px) {
+    .grilla {
+        background-color: rgb(255, 109, 80);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
 
-     .contacto{
-        @include piededepagina
-     }
- }
- 
+    }
+
+    .header {
+        display: grid;
+        grid-area: header;
+        grid-template-columns: 0.5fr 1.5fr;
+        ;
+        grid-template-areas: "logo titulo";
+
+        &-logo {
+            display: grid;
+            grid-area: logo;
+            justify-content: center;
+            align-content: center;
+        }
+
+        &-titulo {
+            display: grid;
+            grid-area: titulo;
+            align-content: center;
+            text-align: center;
+            font-size: 2vw;
+        }
+
+    }
+
+    .main {
+        display: grid;
+        grid-area: main;
+        grid-template-columns: 0.3fr 1fr;
+        ;
+        grid-template-rows: 0.7fr;
+        grid-template-areas: "menu pilares";
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        
+        &-home{
+            padding-bottom: 50%;
+        }
+        &-art{ padding-bottom: 50%;}
+        &-produc{ padding-bottom: 50%;}
+        &-recet{ padding-bottom: 50%;}
+        &-natu{ padding-bottom: 50%;}
+        
+
+    }
+
+    .pilares {
+        display: grid;
+        grid-template-rows: repeat(4, 0.2fr);
+
+        &-galeria {
+            max-width: 100%;
+            height: auto;
+            text-align: center;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+}
