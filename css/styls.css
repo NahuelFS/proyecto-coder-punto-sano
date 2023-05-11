@@ -96,11 +96,20 @@ a {
 .footer-contacto {
   padding: 25px;
 }
-.footer-pago {
+.footer-pagos {
   padding: 25px;
 }
 .footer-mapa {
   padding: 25px;
+}
+.footer-contacto:hover {
+  transform: scale(2);
+}
+.footer-pagos:hover {
+  transform: scale(2);
+}
+.footer-mapa:hover {
+  transform: scale(2);
 }
 
 @media (min-width: 630px) {
@@ -108,20 +117,21 @@ a {
     background-color: rgb(255, 109, 80);
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
     grid-template-areas: "header" "main" "footer";
   }
   .header {
     display: grid;
     grid-area: header;
     grid-template-columns: 0.5fr 1.5fr;
+    height: 500px;
     grid-template-areas: "logo titulo";
   }
   .header-logo {
     display: grid;
     grid-area: logo;
     justify-content: center;
-    align-content: center;
+    align-content: flex-start;
   }
   .header-titulo {
     display: grid;
@@ -144,14 +154,29 @@ a {
   .menu-home {
     padding-bottom: 50%;
   }
+  .menu-home:hover {
+    transform: scale(1.2);
+  }
   .menu-art {
     padding-bottom: 50%;
+  }
+  .menu-art:hover {
+    transform: scale(1.2);
   }
   .menu-produc {
     padding-bottom: 50%;
   }
+  .menu-produc:hover {
+    transform: scale(1.2);
+  }
+  .menu-recet:hover {
+    transform: scale(1.2);
+  }
   .menu-recet {
     padding-bottom: 50%;
+  }
+  .menu-natu:hover {
+    transform: scale(1.2);
   }
   .menu-natu {
     padding-bottom: 50%;
@@ -161,9 +186,39 @@ a {
     grid-template-rows: repeat(4, 0.2fr);
   }
   .pilares-galeria {
-    max-width: 100%;
-    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+  .footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-areas: "footer-mapa footer-contacto footer-pagos";
+  }
+  .footer-contacto {
+    color: white;
+    display: grid;
+    align-content: center;
     text-align: center;
+    padding: 30px;
+  }
+  .footer-contacto:hover {
+    transform: scale(2);
+  }
+  .footer-pagos {
+    color: white;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    padding: 30px;
+  }
+  .footer-pagos:hover {
+    transform: scale(2);
+  }
+  .footer-mapa:hover {
+    transform: scale(2);
   }
 }
 

@@ -47,15 +47,17 @@ a {
     grid-template-rows: 10vh 100rem;
 }
 
-
-
 .menu {
     grid-row: 1 2;
+justify-content: center;
+}
+
+.menu-lista {
     display: flex;
     flex-direction: row;
-    //justify-content: space-around;
-    //align-items: center;
-    // list-style-type: none;
+    justify-content: space-around;
+    align-items: center;
+    
 }
 
 .pilares {
@@ -100,21 +102,42 @@ a {
         padding: 25px;
     }
 
-    &-pago {
+    &-pagos {
         padding: 25px;
     }
 
     &-mapa {
         padding: 25px;
     }
+
+    &-contacto:hover {
+        transform: scale(2.0);
+    }
+
+    &-pagos:hover {
+        transform: scale(2.0);
+    }
+
+    &-mapa:hover {
+        transform: scale(3.0);
+    }
 }
+
+
+
+
+
+
+
+
+
 
 @media (min-width:630px) {
     .grilla {
         background-color: rgb(255, 109, 80);
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr;
         grid-template-areas:
             "header"
             "main"
@@ -126,14 +149,14 @@ a {
         display: grid;
         grid-area: header;
         grid-template-columns: 0.5fr 1.5fr;
-        ;
+        height: 500px;
         grid-template-areas: "logo titulo";
 
         &-logo {
             display: grid;
             grid-area: logo;
             justify-content: center;
-            align-content: center;
+            align-content: flex-start;
         }
 
         &-titulo {
@@ -150,23 +173,61 @@ a {
         display: grid;
         grid-area: main;
         grid-template-columns: 0.3fr 1fr;
-        ;
+
         grid-template-rows: 0.7fr;
         grid-template-areas: "menu pilares";
     }
 
+
+
     .menu {
+
         display: flex;
         justify-content: center;
-        
-        &-home{
+
+        &-home {
             padding-bottom: 50%;
         }
-        &-art{ padding-bottom: 50%;}
-        &-produc{ padding-bottom: 50%;}
-        &-recet{ padding-bottom: 50%;}
-        &-natu{ padding-bottom: 50%;}
-        
+
+        &-home:hover {
+
+            transform: scale(1.2);
+
+        }
+
+        &-art {
+            padding-bottom: 50%;
+        }
+
+        &-art:hover {
+            transform: scale(1.2);
+
+        }
+
+        &-produc {
+            padding-bottom: 50%;
+        }
+
+        &-produc:hover {
+            transform: scale(1.2);
+        }
+
+        &-recet:hover {
+            transform: scale(1.2);
+        }
+
+        &-recet {
+            padding-bottom: 50%;
+        }
+
+        &-natu:hover {
+            transform: scale(1.2);
+        }
+
+        &-natu {
+            padding-bottom: 50%;
+        }
+
 
     }
 
@@ -175,13 +236,40 @@ a {
         grid-template-rows: repeat(4, 0.2fr);
 
         &-galeria {
-            max-width: 100%;
-            height: auto;
-            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            align-items: center;
         }
+
     }
 
+    .footer {
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: repeat(3 1fr);
+        grid-template-areas: "footer-mapa footer-contacto footer-pagos";
 
+        &-contacto {
+            @include piedepagina
+        }
+
+        &-contacto:hover {
+            transform: scale(2.0);
+        }
+
+        &-pagos {
+            @include piedepagina
+        }
+
+        &-pagos:hover {
+            transform: scale(2.0);
+        }
+
+        &-mapa:hover {
+            transform: scale(2.0);
+        }
+    }
 
 
 
