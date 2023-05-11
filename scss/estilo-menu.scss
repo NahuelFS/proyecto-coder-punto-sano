@@ -1,0 +1,38 @@
+@mixin menu-lista-styls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin menu-styls{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        list-style: none;
+        padding: 0;
+      
+}
+
+@mixin menu-item-styles {
+    li {
+      &:hover {
+        transform: scale(1.2);
+      }
+      padding-bottom: 50%;
+      background-color: #a1f79a;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: inline-block;
+      margin-right: 10px;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.3s;
+      color: #0e0d0d;
+      font-family: Arial, sans-serif;
+        }
+  }
+  
