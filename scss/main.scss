@@ -25,6 +25,7 @@ a {
 @import "estilo-menu";
 @import "grilla";
 
+
 .grilla {
     background-color: rgb(255, 109, 80);
 }
@@ -34,7 +35,8 @@ a {
 
     &-logo {
         display: grid;
-
+        justify-content: center;
+        align-items: center
     }
 
     &-titulo {
@@ -55,6 +57,7 @@ a {
 }
 
 .menu-lista {
+
     @include menu-lista-styls;
 
 }
@@ -96,6 +99,7 @@ a {
 .footer {
     padding: 40px;
     @include piedepagina;
+    @include letra-titulo-color(white);
 
     &-contacto {
         padding: 25px;
@@ -127,19 +131,7 @@ a {
 
     background-color: rgb(82, 154, 255)
 }
-.header-artesanales{
-    display: block none;
 
-    &-logo-artesanales {
-        display: grid;
-
-    }
-
-    &-titulo-artesanales {
-        display: grid;
-        @include letra-titulo-color(white);
-    }
-}
 
 .main-artesanales {
     display: grid;
@@ -157,6 +149,41 @@ a {
 }
 
 
+// PRODUCTOS.HTML
+
+.grilla-producto {
+    @include grilla-comun;
+    background-color: rgb(205, 146, 253)
+}
+
+.main-productos {
+    display: grid;
+    grid-template-rows: max-content;
+}
+
+
+.galeria-imagenes-productos {
+    @include pilares-img-basico;
+
+}
+
+.titulo-lista-productos {
+    @include letra-titulo-color(white)
+}
+
+
+// RECETAS
+
+.grilla-receta {
+
+    background-color: rgb(255, 109, 80);
+    @include grilla-comun
+}
+
+
+
+
+
 // noteboock
 
 @media (min-width:630px) {
@@ -164,7 +191,7 @@ a {
         background-color: rgb(255, 109, 80);
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: auto;
         grid-template-areas:
             "header"
             "main"
@@ -261,16 +288,108 @@ a {
     // ARTESANALES.HTML 
 
     .grillart {
-        
-         @include grilla-comun;
+
+        @include grilla-comun;
     }
-    
-    .main-artesanales{
+
+    .header {
+        @include header;
+
+        &-logo {
+            display: grid;
+            grid-area: logo;
+            justify-content: center;
+            align-content: flex-start;
+        }
+
+        &-titulo {
+            display: grid;
+            grid-area: titulo;
+            @include letra-titulo-color(white);
+            font-size: 2vw;
+        }
+    }
+
+    .main-artesanales {
         display: grid;
         grid-area: main;
-        grid-template-columns:0.3fr 1fr; 
+        grid-template-columns: 0.3fr 1fr;
         grid-template-areas: "menu contenido-artesanales";
         grid-template-rows: none;
     }
+
+    // PRODUCTOS.HTML
+
+    .grilla-producto {
+        @include grilla-comun;
+    }
+
+    .main-productos {
+        display: grid;
+        grid-area: main;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 30% 60%;
+        grid-template-areas:
+            "menu galeria-listado-productos "
+            "menu galeria-listado-productos "
+
+    }
+
+    .titulo-lista-productos {
+        display: grid;
+        align-content: center;
+        text-align: center;
+
+
+    }
+
+    .menu {
+        display: grid;
+        grid-area: menu;
+    }
+
+    .galeria-listado-productos {
+        display: grid;
+        grid-area: galeria-listado-productos;
+        grid-template-rows: 200px 0.5fr;
+        grid-template-areas:
+            "titulo-lista-productos" " galeria-imagenes-productos ";
+
+
+    }
+
+    .galeria-imagenes-productos {
+        display: grid;
+        grid-template-columns: 0.3fr 0.3fr 0.3fr;
+        grid-template-rows: 0.3fr 0.3fr 0.3fr;
+        grid-template-areas:
+            "galeria-varios galeria-congelados  galeria-legumbres"
+            "galeria-cereales galeria-dulces";
+    }
+
+    .galeria-varios:hover {
+        transform: scale(1.5);
+    }
+
+    .galeria-congelados:hover {
+        transform: scale(1.5);
+    }
+
+    .galeria-cereales:hover {
+        transform: scale(1.5);
+    }
+
+    .galeria-dulces:hover {
+        transform: scale(1.5);      
+    }
+    .galeria-legumbres:hover {
+        transform: scale(1.5);
+    }
+    // RECETAS
+
+
+
+
+
 
 }

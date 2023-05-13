@@ -26,6 +26,8 @@ a {
 }
 .header-logo {
   display: grid;
+  justify-content: center;
+  align-items: center;
 }
 .header-titulo {
   display: grid;
@@ -99,6 +101,11 @@ a {
   align-content: center;
   text-align: center;
   padding: 30px;
+  color: white;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 .footer-contacto {
   padding: 25px;
@@ -123,21 +130,6 @@ a {
   background-color: rgb(82, 154, 255);
 }
 
-.header-artesanales {
-  display: block none;
-}
-.header-artesanales-logo-artesanales {
-  display: grid;
-}
-.header-artesanales-titulo-artesanales {
-  display: grid;
-  color: white;
-  align-content: center;
-  text-align: center;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
 .main-artesanales {
   display: grid;
   grid-template-rows: 0.2fr repeat(2, 0.5fr);
@@ -159,12 +151,48 @@ a {
   gap: 20px;
 }
 
+.grilla-producto {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "main" "footer";
+  background-color: rgb(205, 146, 253);
+}
+
+.main-productos {
+  display: grid;
+  grid-template-rows: max-content;
+}
+
+.galeria-imagenes-productos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.titulo-lista-productos {
+  color: white;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.grilla-receta {
+  background-color: rgb(255, 109, 80);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
 @media (min-width: 630px) {
   .grilla {
     background-color: rgb(255, 109, 80);
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: auto;
     grid-template-areas: "header" "main" "footer";
   }
   .header {
@@ -273,8 +301,32 @@ a {
   .grillart {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: auto;
     grid-template-areas: "header" "main" "footer";
+  }
+  .header {
+    display: grid;
+    grid-area: header;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-areas: "logo titulo";
+    height: auto;
+    padding: 10%;
+  }
+  .header-logo {
+    display: grid;
+    grid-area: logo;
+    justify-content: center;
+    align-content: flex-start;
+  }
+  .header-titulo {
+    display: grid;
+    grid-area: titulo;
+    color: white;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 2vw;
   }
   .main-artesanales {
     display: grid;
@@ -282,6 +334,55 @@ a {
     grid-template-columns: 0.3fr 1fr;
     grid-template-areas: "menu contenido-artesanales";
     grid-template-rows: none;
+  }
+  .grilla-producto {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header" "main" "footer";
+  }
+  .main-productos {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 30% 60%;
+    grid-template-areas: "menu galeria-listado-productos " "menu galeria-listado-productos ";
+  }
+  .titulo-lista-productos {
+    display: grid;
+    align-content: center;
+    text-align: center;
+  }
+  .menu {
+    display: grid;
+    grid-area: menu;
+  }
+  .galeria-listado-productos {
+    display: grid;
+    grid-area: galeria-listado-productos;
+    grid-template-rows: 200px 0.5fr;
+    grid-template-areas: "titulo-lista-productos" " galeria-imagenes-productos ";
+  }
+  .galeria-imagenes-productos {
+    display: grid;
+    grid-template-columns: 0.3fr 0.3fr 0.3fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr;
+    grid-template-areas: "galeria-varios galeria-congelados  galeria-legumbres" "galeria-cereales galeria-dulces";
+  }
+  .galeria-varios:hover {
+    transform: scale(1.5);
+  }
+  .galeria-congelados:hover {
+    transform: scale(1.5);
+  }
+  .galeria-cereales:hover {
+    transform: scale(1.5);
+  }
+  .galeria-dulces:hover {
+    transform: scale(1.5);
+  }
+  .galeria-legumbres:hover {
+    transform: scale(1.5);
   }
 }
 
