@@ -179,12 +179,58 @@ a {
     background-color: rgb(255, 109, 80);
     @include grilla-comun
 }
+.descripcion-recetas{
+    @include  letra-titulo-color(white);
+}
+.descripcion-titulo{
+    padding: 30px;
+}
+.descripcion-subtitulo{
+    padding: 30px;
+}
 
+.galeria-recetas{
+    @include pilares-img-basico ;
+    padding: 20px;
+}
 
+.croqueta:hover{
+transform: scale(1.5);
+}
+.garbanzo:hover{
+    transform: scale(1.5);
+}
+.masa:hover{
+    transform: scale(1.5);
+}
+// DESAYUNOS
 
+.grilla-desayuno{
+    background-color: rgb(136, 55, 136);
+    @include grilla-comun
+}
+.descripcion-desayuno{
+    @include letra-titulo-color(white)
 
+}
+.galeria-imagenes-boxte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.boxte-items:hover{
+    transform: scale(1.5);
+}
+.boxte-abierto:hover{
+    transform: scale(1.5);
+}
+.boxte-cerrado:hover{
+    transform: scale(1.5);
+}
 
-// noteboock
+// MEDIA QUERIES PARA NOTEBOOCK
 
 @media (min-width:630px) {
     .grilla {
@@ -389,7 +435,72 @@ a {
 
 
 
+    .galeria-recetas {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(0, 1fr);
+        grid-gap: 10px;
+        max-width: 35rem;
+        height: auto;
+        justify-content: center;
+    
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: 0.3s;
+    
+            &:hover {
+                transform: scale(3.0);
+                cursor: crosshair;
+                opacity: 5;
+                filter: contrast(150%);
+            }
+        }
+    }
+    
+    
+    
+    
+// DESATUNOS.HTML
 
+ .main-desayuno{
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 30% 60%;
+    grid-template-areas:
+        "menu descripcion-desayuno "
+        "menu galeria-imagenes-boxte "
+ }   
 
+.descripcion-desayuno{
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: 30px;
+}
 
+ .galeria-imagenes-boxte {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-gap: 30px;
+    max-width: 35rem;
+    height: auto;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(3.0);
+            cursor: crosshair;
+            opacity: 5;
+            filter: contrast(150%);
+        }
+    }
+}
 }

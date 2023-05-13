@@ -187,6 +187,78 @@ a {
   grid-template-areas: "header" "main" "footer";
 }
 
+.descripcion-recetas {
+  color: white;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.descripcion-titulo {
+  padding: 30px;
+}
+
+.descripcion-subtitulo {
+  padding: 30px;
+}
+
+.galeria-recetas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.croqueta:hover {
+  transform: scale(1.5);
+}
+
+.garbanzo:hover {
+  transform: scale(1.5);
+}
+
+.masa:hover {
+  transform: scale(1.5);
+}
+
+.grilla-desayuno {
+  background-color: rgb(136, 55, 136);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
+.descripcion-desayuno {
+  color: white;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.galeria-imagenes-boxte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.boxte-items:hover {
+  transform: scale(1.5);
+}
+
+.boxte-abierto:hover {
+  transform: scale(1.5);
+}
+
+.boxte-cerrado:hover {
+  transform: scale(1.5);
+}
+
 @media (min-width: 630px) {
   .grilla {
     background-color: rgb(255, 109, 80);
@@ -383,6 +455,60 @@ a {
   }
   .galeria-legumbres:hover {
     transform: scale(1.5);
+  }
+  .galeria-recetas {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-gap: 10px;
+    max-width: 35rem;
+    height: auto;
+    justify-content: center;
+  }
+  .galeria-recetas img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .galeria-recetas img:hover {
+    transform: scale(3);
+    cursor: crosshair;
+    opacity: 5;
+    filter: contrast(150%);
+  }
+  .main-desayuno {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 30% 60%;
+    grid-template-areas: "menu descripcion-desayuno " "menu galeria-imagenes-boxte ";
+  }
+  .descripcion-desayuno {
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: 30px;
+  }
+  .galeria-imagenes-boxte {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-gap: 30px;
+    max-width: 35rem;
+    height: auto;
+    justify-content: center;
+  }
+  .galeria-imagenes-boxte img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .galeria-imagenes-boxte img:hover {
+    transform: scale(3);
+    cursor: crosshair;
+    opacity: 5;
+    filter: contrast(150%);
   }
 }
 
