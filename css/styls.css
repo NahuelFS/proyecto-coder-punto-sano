@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 
 
 body {
@@ -28,11 +29,26 @@ li {
 
 
 /* ###############       MOVILE     ################## */
+=======
+ul {
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+  list-style-position: none;
+}
+
+a {
+  text-decoration: none;
+}
+>>>>>>> rama-sass
 
 .grilla {
   background-color: rgb(255, 109, 80);
 }
 
+<<<<<<< HEAD
 .header-logo:hover {
   transform: scale(1.2);
 
@@ -43,19 +59,33 @@ li {
 
 .header-titulo  {
 
+=======
+.header {
+  display: block none;
+}
+.header-logo {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.header-titulo {
+  display: grid;
+>>>>>>> rama-sass
   color: white;
   align-content: center;
   text-align: center;
   padding: 20px;
+<<<<<<< HEAD
   text-shadow:2px 2px 2px red, 4px 2px 2px black  ;
+=======
+  font-family: Arial, sans-serif;
+>>>>>>> rama-sass
 }
-
-/* ###########   MAIN   ##########*/
-
 
 .main {
   display: grid;
   grid-area: main;
+<<<<<<< HEAD
   grid-template-rows: 10vh 1fr;
 }
 
@@ -335,19 +365,145 @@ li {
 }
 
 .galletas-art {
+=======
+  grid-template-rows: 10vh 100rem;
+}
+
+.menu {
+  grid-row: 1 2;
+  justify-content: center;
+}
+
+.menu-lista {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pilares {
+  grid-row: 2 3;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  grid-template-areas: "bienestar" "productos" "recetas" "galeria";
+}
+.pilares-bienestar {
+  display: grid;
+  color: white;
+  align-content: center;
+  text-align: center;
+  background-color: rgb(166, 73, 253);
+  grid-area: bienestar;
+}
+.pilares-productos {
+  background-color: rgb(129, 194, 226);
+  grid-area: productos;
+  display: grid;
+  color: white;
+  align-content: center;
+  text-align: center;
+}
+.pilares-recetas {
+  background-color: rgb(249, 170, 61);
+  grid-area: recetas;
+  display: grid;
+  color: white;
+  align-content: center;
+  text-align: center;
+}
+.pilares-galeria {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.footer {
+  padding: 40px;
+  color: white;
+  display: grid;
+  align-content: center;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+.footer-contacto {
+  padding: 25px;
+}
+.footer-pagos {
+  padding: 25px;
+}
+.footer-mapa {
+  padding: 25px;
+}
+.footer-contacto:hover {
+  transform: scale(2);
+}
+.footer-pagos:hover {
+  transform: scale(2);
+}
+.footer-mapa:hover {
+  transform: scale(2);
+}
+
+.grillart {
+  background-color: rgb(82, 154, 255);
+}
+
+.main-artesanales {
+  display: grid;
+  grid-template-rows: 0.2fr repeat(2, 0.5fr);
+}
+
+.descripcion-artesanales {
+  display: grid;
+  color: white;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.galeria {
+>>>>>>> rama-sass
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+<<<<<<< HEAD
   padding: 10px;
 
 }
 
 .pan-art {
+=======
+}
+
+.grilla-producto {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "main" "footer";
+  background-color: rgb(205, 146, 253);
+}
+
+.main-productos {
+  display: grid;
+  grid-template-rows: max-content;
+}
+
+.galeria-imagenes-productos {
+>>>>>>> rama-sass
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+<<<<<<< HEAD
   padding: 10px;
 
 }
@@ -490,18 +646,91 @@ p {
 }
 
 .boxte {
+=======
+}
+
+.titulo-lista-productos {
+  color: white;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.grilla-receta {
+  background-color: rgb(255, 109, 80);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
+.descripcion-recetas {
+  color: white;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.descripcion-titulo {
+  padding: 30px;
+}
+
+.descripcion-subtitulo {
+  padding: 30px;
+}
+
+.galeria-recetas {
+>>>>>>> rama-sass
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+<<<<<<< HEAD
   padding: 10px;
 }
 
 .caja-desa {
+=======
+  padding: 20px;
+}
+
+.croqueta:hover {
+  transform: scale(1.5);
+}
+
+.garbanzo:hover {
+  transform: scale(1.5);
+}
+
+.masa:hover {
+  transform: scale(1.5);
+}
+
+.grilla-desayuno {
+  background-color: rgb(136, 55, 136);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
+.descripcion-desayuno {
+  color: white;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.galeria-imagenes-boxte {
+>>>>>>> rama-sass
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+<<<<<<< HEAD
   padding: 10px;
 }
 
@@ -744,3 +973,274 @@ p {
       grid-template-areas: "mapa contacto pagos";
   }
 }
+=======
+  padding: 20px;
+}
+
+.boxte-items:hover {
+  transform: scale(1.5);
+}
+
+.boxte-abierto:hover {
+  transform: scale(1.5);
+}
+
+.boxte-cerrado:hover {
+  transform: scale(1.5);
+}
+
+@media (min-width: 630px) {
+  .grilla {
+    background-color: rgb(255, 109, 80);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header" "main" "footer";
+  }
+  .header {
+    display: grid;
+    grid-area: header;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-areas: "logo titulo";
+    height: auto;
+    padding: 10%;
+  }
+  .header-logo {
+    display: grid;
+    grid-area: logo;
+    justify-content: center;
+    align-content: flex-start;
+  }
+  .header-titulo {
+    display: grid;
+    grid-area: titulo;
+    color: white;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 2vw;
+  }
+  .main {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-rows: 0.7fr;
+    grid-template-areas: "menu pilares";
+  }
+  .menu-lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .menu-lista li {
+    padding-bottom: 50%;
+    background-color: #a1f79a;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s;
+    color: #0e0d0d;
+    font-family: Arial, sans-serif;
+  }
+  .menu-lista li:hover {
+    transform: scale(1.2);
+  }
+  .pilares {
+    color: white;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-rows: repeat(4, 0.2fr);
+  }
+  .pilares-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+  .footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-areas: "footer-mapa footer-contacto footer-pagos";
+  }
+  .footer-contacto {
+    color: white;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    padding: 30px;
+  }
+  .footer-contacto:hover {
+    transform: scale(2);
+  }
+  .footer-pagos {
+    color: white;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    padding: 30px;
+  }
+  .footer-pagos:hover {
+    transform: scale(2);
+  }
+  .footer-mapa:hover {
+    transform: scale(2);
+  }
+  .grillart {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header" "main" "footer";
+  }
+  .header {
+    display: grid;
+    grid-area: header;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-areas: "logo titulo";
+    height: auto;
+    padding: 10%;
+  }
+  .header-logo {
+    display: grid;
+    grid-area: logo;
+    justify-content: center;
+    align-content: flex-start;
+  }
+  .header-titulo {
+    display: grid;
+    grid-area: titulo;
+    color: white;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 2vw;
+  }
+  .main-artesanales {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-areas: "menu contenido-artesanales";
+    grid-template-rows: none;
+  }
+  .grilla-producto {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header" "main" "footer";
+  }
+  .main-productos {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 30% 60%;
+    grid-template-areas: "menu galeria-listado-productos " "menu galeria-listado-productos ";
+  }
+  .titulo-lista-productos {
+    display: grid;
+    align-content: center;
+    text-align: center;
+  }
+  .menu {
+    display: grid;
+    grid-area: menu;
+  }
+  .galeria-listado-productos {
+    display: grid;
+    grid-area: galeria-listado-productos;
+    grid-template-rows: 200px 0.5fr;
+    grid-template-areas: "titulo-lista-productos" " galeria-imagenes-productos ";
+  }
+  .galeria-imagenes-productos {
+    display: grid;
+    grid-template-columns: 0.3fr 0.3fr 0.3fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr;
+    grid-template-areas: "galeria-varios galeria-congelados  galeria-legumbres" "galeria-cereales galeria-dulces";
+  }
+  .galeria-varios:hover {
+    transform: scale(1.5);
+  }
+  .galeria-congelados:hover {
+    transform: scale(1.5);
+  }
+  .galeria-cereales:hover {
+    transform: scale(1.5);
+  }
+  .galeria-dulces:hover {
+    transform: scale(1.5);
+  }
+  .galeria-legumbres:hover {
+    transform: scale(1.5);
+  }
+  .galeria-recetas {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-gap: 10px;
+    max-width: 35rem;
+    height: auto;
+    justify-content: center;
+  }
+  .galeria-recetas img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .galeria-recetas img:hover {
+    transform: scale(3);
+    cursor: crosshair;
+    opacity: 5;
+    filter: contrast(150%);
+  }
+  .main-desayuno {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 30% 60%;
+    grid-template-areas: "menu descripcion-desayuno " "menu galeria-imagenes-boxte ";
+  }
+  .descripcion-desayuno {
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: 30px;
+  }
+  .galeria-imagenes-boxte {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-gap: 30px;
+    max-width: 35rem;
+    height: auto;
+    justify-content: center;
+  }
+  .galeria-imagenes-boxte img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .galeria-imagenes-boxte img:hover {
+    transform: scale(3);
+    cursor: crosshair;
+    opacity: 5;
+    filter: contrast(150%);
+  }
+}
+
+/*# sourceMappingURL=styls.css.map */
+>>>>>>> rama-sass

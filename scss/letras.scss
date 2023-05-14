@@ -1,0 +1,19 @@
+@import "color"; //importacion
+
+@mixin letra-titulo{//mixin
+    color: $mi-color-letra;//variable
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+
+@mixin letra-titulo-color($color){ //parametro
+    color: $color;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+// importacion-mixin- variable -parametro

@@ -1,0 +1,506 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+    list-style-position: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@import "header";
+@import "color";
+@import "piedepagina";
+@import "letras";
+@import "pilares-basicos";
+@import "estilo-menu";
+@import "grilla";
+
+
+.grilla {
+    background-color: rgb(255, 109, 80);
+}
+
+.header {
+    display: block none;
+
+    &-logo {
+        display: grid;
+        justify-content: center;
+        align-items: center
+    }
+
+    &-titulo {
+        display: grid;
+        @include letra-titulo-color(white);
+    }
+}
+
+.main {
+    display: grid;
+    grid-area: main;
+    grid-template-rows: 10vh 100rem;
+}
+
+.menu {
+    grid-row: 1 2;
+    justify-content: center;
+}
+
+.menu-lista {
+
+    @include menu-lista-styls;
+
+}
+
+.pilares {
+    grid-row: 2 3;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    grid-template-areas:
+        "bienestar"
+        "productos"
+        "recetas"
+        "galeria";
+
+    &-bienestar {
+        @include pilares-basico;
+        background-color: rgb(166, 73, 253);
+        grid-area: bienestar;
+    }
+
+    &-productos {
+        background-color: rgb(129, 194, 226);
+        grid-area: productos;
+        @include pilares-basico;
+    }
+
+    &-recetas {
+        background-color: rgb(249, 170, 61);
+        grid-area: recetas;
+        @include pilares-basico;
+    }
+
+    &-galeria {
+        @include pilares-img-basico
+    }
+}
+
+.footer {
+    padding: 40px;
+    @include piedepagina;
+    @include letra-titulo-color(white);
+
+    &-contacto {
+        padding: 25px;
+    }
+
+    &-pagos {
+        padding: 25px;
+    }
+
+    &-mapa {
+        padding: 25px;
+    }
+
+    &-contacto:hover {
+        transform: scale(2.0);
+    }
+
+    &-pagos:hover {
+        transform: scale(2.0);
+    }
+
+    &-mapa:hover {
+        transform: scale(2.0);
+    }
+}
+
+// ARTESANALES.HTML 
+.grillart {
+
+    background-color: rgb(82, 154, 255)
+}
+
+
+.main-artesanales {
+    display: grid;
+    grid-template-rows: 0.2fr repeat(2, 0.5fr);
+
+}
+
+.descripcion-artesanales {
+    display: grid;
+    @include letra-titulo-color(white)
+}
+
+.galeria {
+    @include pilares-img-basico
+}
+
+
+// PRODUCTOS.HTML
+
+.grilla-producto {
+    @include grilla-comun;
+    background-color: rgb(205, 146, 253)
+}
+
+.main-productos {
+    display: grid;
+    grid-template-rows: max-content;
+}
+
+
+.galeria-imagenes-productos {
+    @include pilares-img-basico;
+
+}
+
+.titulo-lista-productos {
+    @include letra-titulo-color(white)
+}
+
+
+// RECETAS
+
+.grilla-receta {
+
+    background-color: rgb(255, 109, 80);
+    @include grilla-comun
+}
+.descripcion-recetas{
+    @include  letra-titulo-color(white);
+}
+.descripcion-titulo{
+    padding: 30px;
+}
+.descripcion-subtitulo{
+    padding: 30px;
+}
+
+.galeria-recetas{
+    @include pilares-img-basico ;
+    padding: 20px;
+}
+
+.croqueta:hover{
+transform: scale(1.5);
+}
+.garbanzo:hover{
+    transform: scale(1.5);
+}
+.masa:hover{
+    transform: scale(1.5);
+}
+// DESAYUNOS
+
+.grilla-desayuno{
+    background-color: rgb(136, 55, 136);
+    @include grilla-comun
+}
+.descripcion-desayuno{
+    @include letra-titulo-color(white)
+
+}
+.galeria-imagenes-boxte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.boxte-items:hover{
+    transform: scale(1.5);
+}
+.boxte-abierto:hover{
+    transform: scale(1.5);
+}
+.boxte-cerrado:hover{
+    transform: scale(1.5);
+}
+
+// MEDIA QUERIES PARA NOTEBOOCK
+
+@media (min-width:630px) {
+    .grilla {
+        background-color: rgb(255, 109, 80);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+
+    }
+
+    .header {
+        @include header;
+
+        &-logo {
+            display: grid;
+            grid-area: logo;
+            justify-content: center;
+            align-content: flex-start;
+        }
+
+        &-titulo {
+            display: grid;
+            grid-area: titulo;
+            @include letra-titulo-color(white);
+            font-size: 2vw;
+        }
+
+    }
+
+    .main {
+        display: grid;
+        grid-area: main;
+        grid-template-columns: 0.3fr 1fr;
+
+        grid-template-rows: 0.7fr;
+        grid-template-areas: "menu pilares";
+    }
+
+
+
+    .menu {
+
+
+        &-lista {
+            @include menu-styls;
+            @include menu-item-styles;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+
+
+    }
+
+    .pilares {
+        @include letra-titulo;
+        display: grid;
+        grid-template-rows: repeat(4, 0.2fr);
+
+        &-galeria {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+
+    .footer {
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: repeat(3 1fr);
+        grid-template-areas: "footer-mapa footer-contacto footer-pagos";
+
+        &-contacto {
+            @include piedepagina
+        }
+
+        &-contacto:hover {
+            transform: scale(2.0);
+        }
+
+        &-pagos {
+            @include piedepagina
+        }
+
+        &-pagos:hover {
+            transform: scale(2.0);
+        }
+
+        &-mapa:hover {
+            transform: scale(2.0);
+        }
+    }
+
+    // ARTESANALES.HTML 
+
+    .grillart {
+
+        @include grilla-comun;
+    }
+
+    .header {
+        @include header;
+
+        &-logo {
+            display: grid;
+            grid-area: logo;
+            justify-content: center;
+            align-content: flex-start;
+        }
+
+        &-titulo {
+            display: grid;
+            grid-area: titulo;
+            @include letra-titulo-color(white);
+            font-size: 2vw;
+        }
+    }
+
+    .main-artesanales {
+        display: grid;
+        grid-area: main;
+        grid-template-columns: 0.3fr 1fr;
+        grid-template-areas: "menu contenido-artesanales";
+        grid-template-rows: none;
+    }
+
+    // PRODUCTOS.HTML
+
+    .grilla-producto {
+        @include grilla-comun;
+    }
+
+    .main-productos {
+        display: grid;
+        grid-area: main;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 30% 60%;
+        grid-template-areas:
+            "menu galeria-listado-productos "
+            "menu galeria-listado-productos "
+
+    }
+
+    .titulo-lista-productos {
+        display: grid;
+        align-content: center;
+        text-align: center;
+
+
+    }
+
+    .menu {
+        display: grid;
+        grid-area: menu;
+    }
+
+    .galeria-listado-productos {
+        display: grid;
+        grid-area: galeria-listado-productos;
+        grid-template-rows: 200px 0.5fr;
+        grid-template-areas:
+            "titulo-lista-productos" " galeria-imagenes-productos ";
+
+
+    }
+
+    .galeria-imagenes-productos {
+        display: grid;
+        grid-template-columns: 0.3fr 0.3fr 0.3fr;
+        grid-template-rows: 0.3fr 0.3fr 0.3fr;
+        grid-template-areas:
+            "galeria-varios galeria-congelados  galeria-legumbres"
+            "galeria-cereales galeria-dulces";
+    }
+
+    .galeria-varios:hover {
+        transform: scale(1.5);
+    }
+
+    .galeria-congelados:hover {
+        transform: scale(1.5);
+    }
+
+    .galeria-cereales:hover {
+        transform: scale(1.5);
+    }
+
+    .galeria-dulces:hover {
+        transform: scale(1.5);      
+    }
+    .galeria-legumbres:hover {
+        transform: scale(1.5);
+    }
+    // RECETAS
+
+
+
+    .galeria-recetas {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(0, 1fr);
+        grid-gap: 10px;
+        max-width: 35rem;
+        height: auto;
+        justify-content: center;
+    
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: 0.3s;
+    
+            &:hover {
+                transform: scale(3.0);
+                cursor: crosshair;
+                opacity: 5;
+                filter: contrast(150%);
+            }
+        }
+    }
+    
+    
+    
+    
+// DESATUNOS.HTML
+
+ .main-desayuno{
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 30% 60%;
+    grid-template-areas:
+        "menu descripcion-desayuno "
+        "menu galeria-imagenes-boxte "
+ }   
+
+.descripcion-desayuno{
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: 30px;
+}
+
+ .galeria-imagenes-boxte {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-gap: 30px;
+    max-width: 35rem;
+    height: auto;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(3.0);
+            cursor: crosshair;
+            opacity: 5;
+            filter: contrast(150%);
+        }
+    }
+}
+}
